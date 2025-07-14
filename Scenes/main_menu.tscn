@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://bonpx7cxsg1ex"]
+
+[ext_resource type="Script" uid="uid://b1yevbmvgih65" path="res://Scripts/MainMenu.gd" id="1_28flt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -40.5
+offset_right = 124.5
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 78.0
+offset_right = 125.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+text = "Quit"
+
+[node name="HighScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -177.0
+offset_top = 119.0
+offset_right = -89.0
+offset_bottom = 142.0
+grow_horizontal = 2
+scale = Vector2(3.47577, 4.05969)
+text = "High Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_exit_pressed"]

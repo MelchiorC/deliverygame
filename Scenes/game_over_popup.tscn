@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://dik463bdpflip"]
+
+[ext_resource type="Script" uid="uid://rqvxja3a05xj" path="res://Scripts/gameover.gd" id="1_3iury"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v158k"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="GameOverPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_3iury")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -556.0
+offset_top = -302.0
+offset_right = -556.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(28.8391, 16.162)
+color = Color(0.151276, 0.151276, 0.151276, 1)
+
+[node name="FinalScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -147.0
+offset_right = -29.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.92308, 2.7)
+text = "Final Score:"
+
+[node name="HighScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -205.0
+offset_right = -32.0
+offset_bottom = -182.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.98146, 2.64835)
+text = "High Score:"
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -50.0
+offset_right = 126.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_v158k")
+text = "Retry"
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 66.0
+offset_right = 125.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_v158k")
+text = "Main Menu"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

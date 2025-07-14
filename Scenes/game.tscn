@@ -1,0 +1,365 @@
+[gd_scene load_steps=19 format=4 uid="uid://dpjcnqktpfl1"]
+
+[ext_resource type="PackedScene" uid="uid://duc4mvrkwd0nw" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://c405fisyktenq" path="res://Scripts/GameManager.gd" id="1_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://cawcrxvfaqr04" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://bonpx7cxsg1ex" path="res://Scenes/main_menu.tscn" id="2_v158k"]
+[ext_resource type="PackedScene" uid="uid://dik463bdpflip" path="res://Scenes/game_over_popup.tscn" id="3_h4fw4"]
+[ext_resource type="Script" uid="uid://cw26n6n7tlyev" path="res://Scripts/Truck.gd" id="4_3dryh"]
+[ext_resource type="Texture2D" uid="uid://cow8jkf0qas7m" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/car-full.png" id="5_wowpa"]
+[ext_resource type="Script" uid="uid://dco3wa0flb8ip" path="res://Scripts/Recipient.gd" id="6_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://biqhmwx6rcp3m" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/knight.png" id="7_v158k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxrlw"]
+texture = ExtResource("2_qxrlw")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+1:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+6:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+2:4/size_in_atlas = Vector2i(3, 3)
+2:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wrm1d"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qxrlw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wowpa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4fw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldgsr"]
+atlas = ExtResource("7_v158k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5yvi"]
+atlas = ExtResource("7_v158k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rku1e"]
+atlas = ExtResource("7_v158k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfjv2"]
+atlas = ExtResource("7_v158k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1phco"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldgsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5yvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rku1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfjv2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D"]
+
+[node name="MainMenu" parent="." instance=ExtResource("2_v158k")]
+visible = false
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_wrm1d")
+
+[node name="Timer" type="Timer" parent="GameManager"]
+
+[node name="UI" type="CanvasLayer" parent="GameManager"]
+
+[node name="ScoreLabel" type="Label" parent="GameManager/UI" groups=["recipients"]]
+offset_left = 867.0
+offset_top = -1.0
+offset_right = 910.0
+offset_bottom = 22.0
+scale = Vector2(4.331, 4.0338)
+text = "Score"
+
+[node name="TimerLabel" type="Label" parent="GameManager/UI"]
+offset_left = -0.999939
+offset_top = 1.0
+offset_right = 39.0001
+offset_bottom = 24.0
+scale = Vector2(4.8188, 4.66263)
+text = "Time"
+
+[node name="GameOverPopup" parent="GameManager/UI" instance=ExtResource("3_h4fw4")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+position = Vector2(107, 32)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -7)
+zoom = Vector2(4, 4)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAD9/wIAAAAAAAAAAAAQAAIAAAAAAAAAAAARAAIAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAYAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAAAAAAAAAD8/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD2/wIAAAAAAAAAAAD1/wIAAAAAAAAAAAD1/wEAAAAAAAEAAAD1/wAAAAAAAAEAAAD1////AAAAAAEAAAD1//7/AAAAAAEAAAD1//3/AAAAAAEAAAD1//z/AAAAAAEAAAD1//v/AAAAAAEAAAAaAAEAAAAAAAEAAAAaAAAAAAAAAAEAAAAaAP//AAAAAAEAAAAaAP7/AAAAAAEAAAAaAP3/AAAAAAEAAAAaAPz/AAAAAAEAAAAaAPv/AAAAAAEAAAAaAPr/AAAAAAEAAAAaAPn/AAAAAAEAAAAaAPj/AAAAAAEAAAAaAPf/AAAAAAEAAAD1//r/AAAAAAEAAAD1//n/AAAAAAEAAAD1//j/AAAAAAEAAAD1//f/AAAAAAEAAAD1//b/AAAAAAEAAAD1//X/AAAAAAEAAAD1//T/AAAAAAEAAAD1//P/AAAAAAEAAAD1//L/AAAAAAEAAAD1//H/AAAAAAEAAAAaAPb/AAAAAAEAAAAaAPX/AAAAAAEAAAAaAPT/AAAAAAEAAAAaAPP/AAAAAAEAAAAaAPL/AAAAAAEAAAAaAPH/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_wrm1d")
+
+[node name="Truck" type="Area2D" parent="."]
+position = Vector2(-27, 15)
+scale = Vector2(3.74493, 3.11376)
+script = ExtResource("4_3dryh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Truck"]
+scale = Vector2(0.0294849, 0.0435618)
+texture = ExtResource("5_wowpa")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truck"]
+shape = SubResource("RectangleShape2D_wowpa")
+
+[node name="Recipient1" type="Area2D" parent="." groups=["recipients"]]
+position = Vector2(184, 21)
+script = ExtResource("6_1l0tm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipient1"]
+shape = SubResource("RectangleShape2D_h4fw4")
+
+[node name="Label" type="Label" parent="Recipient1"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -34.0
+offset_right = 26.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Recipient1"]
+sprite_frames = SubResource("SpriteFrames_1phco")
+flip_h = true
+
+[node name="Recipient2" type="Area2D" parent="." groups=["recipients"]]
+position = Vector2(232, 21)
+script = ExtResource("6_1l0tm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipient2"]
+shape = SubResource("RectangleShape2D_h4fw4")
+
+[node name="Label" type="Label" parent="Recipient2"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -34.0
+offset_right = 26.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Recipient2"]
+sprite_frames = SubResource("SpriteFrames_1phco")
+flip_h = true
+
+[node name="Recipient3" type="Area2D" parent="." groups=["recipients"]]
+position = Vector2(279, 21)
+script = ExtResource("6_1l0tm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipient3"]
+shape = SubResource("RectangleShape2D_h4fw4")
+
+[node name="Label" type="Label" parent="Recipient3"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -34.0
+offset_right = 26.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Recipient3"]
+sprite_frames = SubResource("SpriteFrames_1phco")
+flip_h = true
+
+[node name="Recipient4" type="Area2D" parent="." groups=["recipients"]]
+position = Vector2(327, 21)
+script = ExtResource("6_1l0tm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipient4"]
+shape = SubResource("RectangleShape2D_h4fw4")
+
+[node name="Label" type="Label" parent="Recipient4"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -34.0
+offset_right = 26.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Recipient4"]
+sprite_frames = SubResource("SpriteFrames_1phco")
+flip_h = true
