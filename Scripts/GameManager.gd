@@ -3,15 +3,16 @@ extends Node
 @onready var timer: Timer = $Timer
 @onready var score_label: Label = $UI/ScoreLabel
 @onready var time_label: Label = $UI/TimerLabel
+@onready var package_label: Label = $UI/PackageLabel
 @onready var game_over: Control = $UI/GameOverPopup
 
 var score: int = 0
-var time_left: float = 5.0
+var time_left: float = 60.0
 var game_ended := false
 
 func _ready():
 	score = 0
-	time_left = 5.0
+	time_left = 60.0
 	game_ended = false
 	timer.start()
 	score_label.text = "Score: 0"
